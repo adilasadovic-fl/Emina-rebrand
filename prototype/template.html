@@ -186,8 +186,10 @@
   /* ---------- testimonials ---------- */
   /* ---------- forework banner ---------- */
   .fw{position:relative;overflow:hidden;color:var(--white);background:var(--black)}
-  .fw-bg{position:absolute;inset:0;background:url("{{forework-towers.webp}}") center/cover no-repeat;filter:grayscale(.3)}
-  .fw::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,11,10,.96) 0%,rgba(10,11,10,.88) 45%,rgba(16,40,28,.55) 100%)}
+  .fw-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line-dark) 1px,transparent 1px),linear-gradient(90deg,var(--line-dark) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 65% 75% at 75% 50%,#000 0%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 65% 75% at 75% 50%,#000 0%,transparent 75%);opacity:.6}
+  .fw::before{content:"";position:absolute;z-index:1;pointer-events:none;width:760px;height:760px;right:-120px;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(63,209,138,.18),transparent 62%)}
+  .fw::after{content:"";position:absolute;z-index:1;pointer-events:none;width:520px;height:520px;left:-200px;bottom:-260px;background:radial-gradient(circle,rgba(63,209,138,.10),transparent 65%)}
+  .fw{border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
   .fw .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;padding-top:clamp(64px,7vw,96px);padding-bottom:clamp(64px,7vw,96px)}
   .fw-label{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-weight:300;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
   .fw-label::before{content:"";width:24px;height:1px;background:currentColor}
