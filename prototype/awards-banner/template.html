@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poricanin Law | Awards banner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Matches prototype v1 tokens */
+  :root{--black:#0A0B0A;--line-dark:#2A2E2B;--white:#fff;--grey-300:#C9C7C1;--grey-500:#8A8D89;--green-bright:#3FD18A;--gold:#C2A56E;
+    --font-display:"Inter Tight",system-ui,sans-serif;--font-body:"Inter",system-ui,sans-serif;--gutter:clamp(16px,4vw,48px)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--black);font-family:var(--font-body);color:var(--white);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;align-items:center}
+
+  /* ================= AWARDS BANNER ================= */
+  .awards{position:relative;width:100%;overflow:hidden;background:var(--black);border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);padding:clamp(44px,5vw,64px) 0}
+  .awards::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line-dark) 1px,transparent 1px),linear-gradient(90deg,var(--line-dark) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 60% 90% at 50% 100%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 60% 90% at 50% 100%,#000,transparent 75%);opacity:.45;pointer-events:none}
+  .awards::after{content:"";position:absolute;left:50%;bottom:-260px;width:900px;height:420px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(63,209,138,.18),transparent 65%);pointer-events:none}
+  .awards-head{position:relative;z-index:1;max-width:1240px;margin:0 auto 28px;padding:0 var(--gutter);display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .awards-head .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--green-bright)}
+  .awards-head .eyebrow::before{content:"";width:24px;height:1px;background:currentColor}
+  .awards-head h2{font-family:var(--font-display);font-size:clamp(22px,2.2vw,30px);font-weight:600;letter-spacing:-.025em;margin-top:10px}
+  .awards-nav{display:flex;gap:8px}
+  .awards-nav button{width:44px;height:44px;border:1px solid var(--line-dark);background:transparent;color:var(--white);display:grid;place-items:center;cursor:pointer;transition:border-color .2s,color .2s}
+  .awards-nav button:hover{border-color:var(--green-bright);color:var(--green-bright)}
+  .awards-nav svg{width:18px;height:18px}
+  :focus-visible{outline:2px solid var(--green-bright);outline-offset:3px}
+
+  .awards-viewport{position:relative;z-index:1;overflow-x:auto;scrollbar-width:none;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .awards-viewport::-webkit-scrollbar{display:none}
+  .awards-track{display:flex;gap:16px;width:max-content;padding:4px var(--gutter)}
+
+  .award{flex:0 0 auto;width:300px;min-height:168px;display:flex;flex-direction:column;justify-content:space-between;gap:18px;padding:24px 24px 22px;border-radius:14px;border:1px solid rgba(63,209,138,.24);background:linear-gradient(155deg,rgba(63,209,138,.10) 0%,rgba(255,255,255,.02) 45%,rgba(10,11,10,.7) 100%);transition:border-color .3s,transform .3s,box-shadow .3s}
+  .award:hover{border-color:rgba(63,209,138,.65);transform:translateY(-3px);box-shadow:0 18px 50px -24px rgba(63,209,138,.5)}
+  .award .logo{height:34px;display:flex;align-items:center}
+  .award .logo img{max-height:100%;max-width:100%;width:auto;opacity:.92}
+  .award .logo img.tall{height:34px}
+  .award .wordmark{font-family:var(--font-display);font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:1}
+  .award .wordmark sup{font-size:.45em;font-weight:500}
+  .award .wordmark.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-style:italic;letter-spacing:0}
+  .award h3{font-family:var(--font-display);font-size:16px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+  .award p{font-size:13px;color:var(--grey-300);line-height:1.5;margin-top:4px}
+  .award .chip{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:rgba(63,209,138,.14);color:var(--green-bright);border:1px solid rgba(63,209,138,.3)}
+  .award .chip svg{width:12px;height:12px}
+
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+  @media (max-width:640px){.award{width:260px}.awards-nav{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ================= AWARDS BANNER (drop-in section) =================
+     Logos are for the prototype only. Before launch:
+     - Best Lawyers: use the licensed badge from the Best Lawyers badge store; text must follow their wording.
+     - Super Lawyers: Emina to confirm her listing and download the official badge (with year) from the selectee portal.
+     - Home Health Care News: confirm award name ("Future Leaders") and year; logo use needs HHCN permission.
+     - NYS Association of Health Care Providers: confirm exact award name and year; logo use needs HCP permission.
+     - Peer Review "Top Lawyer 2023": confirm the issuer, then add their logo.
+-->
+<section class="awards" aria-labelledby="awardsTitle">
+  <div class="awards-head">
+    <div>
+      <span class="eyebrow">Recognition</span>
+      <h2 id="awardsTitle">Awards &amp; honors</h2>
+    </div>
+    <div class="awards-nav">
+      <button type="button" data-dir="-1" aria-label="Previous awards"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+      <button type="button" data-dir="1" aria-label="Next awards"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+
+  <div class="awards-viewport" id="awardsViewport" tabindex="0" aria-label="Awards, scroll horizontally">
+    <ul class="awards-track" id="awardsTrack" role="list">
+      <li class="award">
+        <div class="logo"><img src="{{best-lawyers-white.svg}}" alt="Best Lawyers" style="height:26px"></div>
+        <div><h3>The Best Lawyers in America®</h3><p>Employment Law – Management<br>Labor Law – Management</p></div>
+        <span class="chip">Since 2022</span>
+      </li>
+      <li class="award">
+        <!-- Placeholder wordmark: replace with Emina's official Super Lawyers badge -->
+        <div class="logo"><span class="wordmark serif">Super Lawyers<sup>®</sup></span></div>
+        <div><h3>Super Lawyers</h3><p>Thomson Reuters<br>New York</p></div>
+        <span class="chip">Selected</span>
+      </li>
+      <li class="award">
+        <div class="logo"><img src="{{hhcn-white.png}}" alt="Home Health Care News" style="height:20px"></div>
+        <div><h3>Future Leaders Award</h3><p>Home Health Care News</p></div>
+        <span class="chip">Honoree</span>
+      </li>
+      <li class="award">
+        <div class="logo"><img src="{{nyshcp-white.png}}" alt="NYS Association of Health Care Providers" class="tall"></div>
+        <div><h3>Business Associate Member of the Year</h3><p>NYS Association of Health Care Providers</p></div>
+        <span class="chip">Award</span>
+      </li>
+      <li class="award">
+        <!-- Issuer to be confirmed; add their logo once known -->
+        <div class="logo"><span class="wordmark">Peer Review</span></div>
+        <div><h3>Top Lawyer</h3><p>Recognized by peer review</p></div>
+        <span class="chip">2023</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<script>
+  // Auto-scrolling carousel: loops seamlessly, pauses on hover/focus/touch, arrows step one card.
+  (() => {
+    const vp = document.getElementById('awardsViewport'), track = document.getElementById('awardsTrack');
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const originals = [...track.children];
+    originals.forEach(li => { const c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c); });
+    let paused = false, last = performance.now();
+    const half = () => track.scrollWidth / 2;
+    ['mouseenter', 'focusin', 'touchstart'].forEach(e => vp.addEventListener(e, () => paused = true, {passive: true}));
+    ['mouseleave', 'focusout', 'touchend'].forEach(e => vp.addEventListener(e, () => paused = false, {passive: true}));
+    let pos = 0, hold = 0;
+    const tick = t => {
+      const dt = Math.min(t - last, 50); last = t;
+      if (paused || reduce || t < hold) { pos = vp.scrollLeft; }
+      else { pos += dt * 0.035; if (pos >= half()) pos -= half(); vp.scrollLeft = pos; }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    document.querySelectorAll('.awards-nav button').forEach(b => b.addEventListener('click', () => {
+      const step = originals[0].offsetWidth + 16, dir = Number(b.dataset.dir);
+      if (dir < 0 && vp.scrollLeft < step) vp.scrollLeft += half();
+      hold = performance.now() + 900;
+      vp.scrollBy({left: step * dir, behavior: reduce ? 'auto' : 'smooth'});
+    }));
+  })();
+</script>
+</body>
+</html>
