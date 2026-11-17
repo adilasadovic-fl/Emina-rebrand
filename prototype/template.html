@@ -180,33 +180,9 @@
   .fw-panel{position:relative;overflow:hidden;border:1px solid rgba(63,209,138,.22);border-radius:6px;padding:clamp(16px,1.6vw,22px);
     background:radial-gradient(ellipse 75% 85% at 95% 105%,rgba(31,122,82,.75),transparent 62%),radial-gradient(ellipse 50% 60% at 60% 120%,rgba(63,209,138,.28),transparent 70%),linear-gradient(180deg,#0C0E0D 0%,#0A0B0A 100%)}
   .fw-panel::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1.2px);background-size:12px 12px;mask-image:linear-gradient(115deg,transparent 30%,#000 75%);-webkit-mask-image:linear-gradient(115deg,transparent 30%,#000 75%);opacity:.55;pointer-events:none}
-  .fw-top{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
-  /* visual */
-  .fw-vis{position:relative;aspect-ratio:6/5;background:#030403;border:1px solid rgba(63,209,138,.2);overflow:hidden}
-  .fw-vis::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.2) 1px,transparent 1.3px);background-size:9px 9px;opacity:.35;mask-image:radial-gradient(ellipse 70% 70% at 50% 48%,#000 20%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 48%,#000 20%,transparent 80%)}
-  .fw-vis svg.sys{position:absolute;inset:0;width:100%;height:100%}
-  .fw-vis .orbit{fill:none;stroke:rgba(63,209,138,.2);stroke-width:1}
-  .fw-vis .link{fill:none;stroke:rgba(63,209,138,.65);stroke-width:1.2;stroke-dasharray:4 6;animation:flow 2.4s linear infinite}
-  @keyframes flow{to{stroke-dashoffset:-20}}
-  .fw-vis .ringglow{animation:breathe 4.5s ease-in-out infinite}
-  @keyframes breathe{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
-  .fw-vis .chip rect.box{fill:rgba(5,8,6,.92);stroke:rgba(63,209,138,.6);stroke-width:1}
-  .fw-vis .chip rect.tab{fill:#1F9A63}
-  .fw-vis .chip text{fill:#fff;font-family:var(--font-display);font-size:13px;font-weight:500;letter-spacing:.06em}
-  .fw-vis .chip circle{fill:var(--green-bright)}
-  .readout{position:absolute;right:4%;bottom:5%;width:min(42%,232px);padding:14px 16px 16px;background:linear-gradient(160deg,rgba(31,122,82,.35),rgba(5,8,6,.92) 55%);border:1px solid rgba(63,209,138,.35);backdrop-filter:blur(6px)}
-  .readout::before,.readout::after{content:"";position:absolute;width:7px;height:7px;background:var(--green-bright)}
-  .readout::before{left:-4px;top:-4px}.readout::after{right:-4px;bottom:-4px}
-  .readout small{display:block;font-size:12px;color:var(--grey-300);letter-spacing:.02em}
-  .readout b{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:clamp(22px,2vw,28px);font-weight:500;letter-spacing:-.02em;margin:0 0 8px}
-  .readout b svg{width:22px;height:22px;color:var(--green-bright)}
-  .meter{display:grid;grid-template-columns:52px 1fr;align-items:center;gap:10px;margin-top:8px;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey-300)}
-  .segs{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
-  .segs i{height:5px;border-radius:2px;background:rgba(255,255,255,.12)}
-  .segs i.on{background:#5BF0A2;box-shadow:0 0 8px rgba(91,240,162,.6);animation:segOn .5s both}
-  @keyframes segOn{from{background:rgba(255,255,255,.12);box-shadow:none}}
+  .fw-top{position:relative;display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(32px,5vw,72px);align-items:center;padding:clamp(20px,3vw,44px)}
   /* copy */
-  .fw-copy{padding:clamp(8px,2vw,24px) clamp(0px,2vw,24px) clamp(8px,2vw,24px) 0}
+  .fw-copy{padding:0}
   .fw-label{font-size:15px;font-weight:500;color:var(--green-bright);letter-spacing:-.005em}
   .fw-logo{display:block;height:30px;width:auto;margin:18px 0 26px}
   .fw h2{font-family:var(--font-display);font-size:clamp(32px,3.6vw,52px);font-weight:500;letter-spacing:-.035em;line-height:1.06;max-width:16ch}
@@ -214,8 +190,8 @@
   .fw p{margin-top:22px;color:var(--grey-300);max-width:46ch}
   .fw-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
   /* glass service cards */
-  .fw-cards{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.2vw,16px);margin-top:clamp(16px,1.6vw,22px)}
-  .gcard{position:relative;display:flex;flex-direction:column;gap:6px;padding:22px 22px 24px;border-radius:14px;border:1px solid rgba(63,209,138,.28);background:linear-gradient(155deg,rgba(63,209,138,.12) 0%,rgba(255,255,255,.025) 45%,rgba(10,11,10,.6) 100%);backdrop-filter:blur(8px);transition:border-color .3s,transform .3s,box-shadow .3s}
+  .fw-cards{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.2vw,16px)}
+  .gcard{position:relative;display:flex;flex-direction:column;gap:8px;min-height:150px;padding:24px 24px 26px;border-radius:14px;border:1px solid rgba(63,209,138,.28);background:linear-gradient(155deg,rgba(63,209,138,.12) 0%,rgba(255,255,255,.025) 45%,rgba(10,11,10,.6) 100%);backdrop-filter:blur(8px);transition:border-color .3s,transform .3s,box-shadow .3s}
   .gcard:hover{border-color:rgba(63,209,138,.7);transform:translateY(-3px);box-shadow:0 18px 50px -20px rgba(63,209,138,.45)}
   .gcard .t{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:19px;font-weight:600;letter-spacing:-.015em;color:var(--white)}
   .gcard .t svg{width:16px;height:16px;color:var(--green-bright);transition:transform .3s}
@@ -362,7 +338,6 @@
     .mobile-nav a{color:var(--white);font-family:var(--font-display);font-size:28px;padding:12px 0;border-bottom:1px solid var(--line-dark)}
     .mobile-nav .btn{margin-top:24px;justify-content:center;font-family:var(--font-body);font-size:15px;border-bottom:0}
     .split,.why-grid,.team-band .wrap,.fw-top,.write-grid{grid-template-columns:1fr}
-    .fw-cards{grid-template-columns:1fr 1fr}
     .f-cols{grid-template-columns:1fr 1fr}
     .insights{grid-template-columns:1fr}
     .post.feature{grid-row:auto;min-height:320px}
@@ -374,9 +349,7 @@
     .practice h3{padding-top:40px}
     .quote{flex-basis:88%}
     .uf,.f-cols,.fw-cards{grid-template-columns:1fr}
-    .fw-vis{aspect-ratio:auto}
-    .fw-vis svg.sys{position:relative;display:block;height:auto;aspect-ratio:6/5}
-    .readout{position:relative;right:auto;bottom:auto;width:auto;margin:0 12px 12px}
+    .gcard{min-height:0}
     .strip .wrap{gap:20px}
     .strip-label{display:none}
     .hero-meta{gap:20px}
@@ -587,42 +560,6 @@
   <div class="wrap">
     <div class="fw-panel reveal">
       <div class="fw-top">
-        <div class="fw-vis" aria-hidden="true">
-          <svg class="sys" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-              <filter id="soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
-              <linearGradient id="disk" x1="0" x2="1"><stop offset="0" stop-color="#3DCB86" stop-opacity="0"/><stop offset=".5" stop-color="#9DFFCB" stop-opacity="1"/><stop offset="1" stop-color="#3DCB86" stop-opacity="0"/></linearGradient>
-              <radialGradient id="core"><stop offset="0" stop-color="#103322"/><stop offset=".75" stop-color="#020302"/></radialGradient>
-            </defs>
-            <circle class="orbit" cx="225" cy="205" r="100"/><circle class="orbit" cx="225" cy="205" r="155"/><circle class="orbit" cx="225" cy="205" r="220"/><circle class="orbit" cx="225" cy="205" r="300"/><circle class="orbit" cx="225" cy="205" r="390"/>
-            <path class="link" d="M225 205 L170 64"/><path class="link" d="M225 205 L392 62"/><path class="link" d="M225 205 L452 176"/><path class="link" d="M225 205 L168 304"/><path class="link" d="M225 205 L150 418"/>
-            <g class="ringglow" style="transform-origin:225px 205px">
-              <circle cx="225" cy="205" r="105" fill="#3DCB86" opacity=".28" filter="url(#soft)"/>
-              <ellipse cx="225" cy="205" rx="175" ry="22" fill="url(#disk)" transform="rotate(-32 225 205)" filter="url(#soft)" opacity=".9"/>
-              <circle cx="225" cy="205" r="70" fill="url(#core)"/>
-              <circle cx="225" cy="205" r="72" fill="none" stroke="#4BE59A" stroke-width="14" filter="url(#glow)"/>
-              <circle cx="225" cy="205" r="72" fill="none" stroke="#EAFFF3" stroke-width="3"/>
-              <ellipse cx="225" cy="205" rx="150" ry="8" fill="url(#disk)" transform="rotate(-32 225 205)"/>
-              <g fill="none" stroke="#F2FFF8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" transform="translate(-75 -45)">
-                <path d="M262 250 l16 17 l26 -34"/><path d="M290 267 l7 0 l36 -45"/>
-              </g>
-            </g>
-            <g class="chip" transform="translate(40 46)"><rect class="box" width="132" height="36"/><rect class="tab" width="20" height="36"/><text x="34" y="23">PAYROLL</text></g>
-            <g class="chip" transform="translate(392 44)"><rect class="box" width="96" height="36"/><rect class="tab" width="20" height="36"/><text x="34" y="23">TAX</text></g>
-            <g class="chip" transform="translate(452 158)"><rect class="box" width="96" height="36"/><rect class="tab" width="20" height="36"/><text x="34" y="23">HR</text></g>
-            <g class="chip" transform="translate(18 286)"><rect class="box" width="150" height="36"/><rect class="tab" width="20" height="36"/><text x="32" y="23">TIME &amp; PAY</text></g>
-            <g class="chip" transform="translate(54 400)"><rect class="box" width="96" height="36"/><rect class="tab" width="20" height="36"/><text x="34" y="23">ACA</text></g>
-          </svg>
-          <div class="readout">
-            <small>Labor compliance?</small>
-            <b>Check. <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 13l4 4 8-10M11 17l1 0 9-11"/></svg></b>
-            <div class="meter">Payroll<span class="segs"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
-            <div class="meter">Tax<span class="segs"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
-            <div class="meter">HR<span class="segs"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
-            <div class="meter">ACA<span class="segs"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
-          </div>
-        </div>
         <div class="fw-copy">
           <span class="fw-label">A Poricanin company</span>
           <img class="fw-logo" src="{{forework-logo-white.png}}" alt="Forework" width="195" height="30">
@@ -633,12 +570,12 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
           </div>
         </div>
-      </div>
-      <div class="fw-cards">
+        <div class="fw-cards">
         <a class="gcard" href="https://forework.com" target="_blank" rel="noopener"><span class="ix">01</span><span class="t">Payroll &amp; tax <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg></span><span class="s">Compliant payroll and tax services for the modern workforce.</span></a>
         <a class="gcard" href="https://forework.com" target="_blank" rel="noopener"><span class="ix">02</span><span class="t">Time &amp; attendance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg></span><span class="s">Pay rules that serve employers and employees well.</span></a>
         <a class="gcard" href="https://forework.com" target="_blank" rel="noopener"><span class="ix">03</span><span class="t">Human resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg></span><span class="s">Attorney-backed counsel for all of your people needs.</span></a>
         <a class="gcard" href="https://forework.com" target="_blank" rel="noopener"><span class="ix">04</span><span class="t">Payroll tax &amp; ACA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg></span><span class="s">State- and IRS-compliant filings, plus ACA tracking and reporting.</span></a>
+      </div>
       </div>
     </div>
   </div>
