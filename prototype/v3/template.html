@@ -166,6 +166,31 @@
   .founder-img .cap i{display:inline-block;width:24px;height:2px;background:var(--green);vertical-align:middle;margin-right:12px}
 
   /* ---------- testimonials ---------- */
+  /* ---------- forework (family company) ---------- */
+  .fw{min-height:680px;color:var(--white);overflow:hidden;display:flex;background:var(--black)}
+  .fw-bg{position:absolute;inset:0;background:url("{{forework-office.webp}}") center 40%/cover no-repeat;filter:grayscale(1) contrast(1.05);transform:scale(1.04);transition:transform 6s var(--ease)}
+  .fw:hover .fw-bg{transform:scale(1)}
+  .fw::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,10,10,.9) 0%,rgba(10,10,10,.55) 55%,rgba(10,10,10,.35) 100%),linear-gradient(180deg,rgba(10,10,10,.2) 40%,rgba(10,10,10,.92) 100%)}
+  .fw::after{content:"";position:absolute;z-index:1;right:-10%;bottom:-40%;width:70%;height:90%;background:radial-gradient(ellipse at center,rgba(61,203,134,.30),transparent 65%);pointer-events:none}
+  .fw .wrap{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:auto 1fr auto auto;column-gap:48px;padding-top:clamp(56px,7vw,96px)}
+  .fw-brand{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+  .fw-brand .label{color:var(--green)}
+  .fw-brand img{height:30px;width:auto}
+  .fw-note{grid-column:2;align-self:start;font-size:15px;color:rgba(255,255,255,.86);max-width:44ch}
+  .fw h2{grid-column:1;grid-row:3;font-size:clamp(38px,4.8vw,72px);font-weight:200;letter-spacing:-.04em;line-height:1.04;padding-top:56px}
+  .fw h2 b{font-weight:500;color:var(--green)}
+  .fw .act{grid-column:2;grid-row:3;align-self:end;display:flex;gap:14px;flex-wrap:wrap}
+  .fw-links{grid-column:1/-1;grid-row:4;display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(40px,5vw,64px);border-top:1px solid rgba(255,255,255,.22)}
+  .fw-links a{display:flex;flex-direction:column;gap:6px;padding:22px 24px 30px;border-left:1px solid rgba(255,255,255,.22);position:relative;transition:background .3s}
+  .fw-links a:first-child{border-left:0;padding-left:0}
+  .fw-links a::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:100%;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+  .fw-links a:hover::before{transform:scaleX(1)}
+  .fw-links .n{font-size:12px;font-weight:500;letter-spacing:.14em;color:var(--green)}
+  .fw-links b{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:clamp(17px,1.4vw,20px);font-weight:400;letter-spacing:-.01em}
+  .fw-links b svg{width:18px;height:18px;flex:none;transition:transform .3s var(--ease)}
+  .fw-links a:hover b svg{transform:translate(3px,-3px);color:var(--green)}
+  .fw-links span.s{font-size:13.5px;color:rgba(255,255,255,.72)}
+
   .quotes{padding:clamp(80px,9vw,130px) 0}
   .quotes-grid{display:grid;grid-template-columns:1fr 2.6fr;gap:40px}
   .quotes-side{display:flex;flex-direction:column;justify-content:space-between;gap:40px}
@@ -271,15 +296,15 @@
 
   /* ---------- footer ---------- */
   .footer{background:var(--paper);padding:clamp(64px,7vw,96px) 0 32px}
-  .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding-bottom:44px;border-bottom:1px solid var(--line)}
+  .footer-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:44px;border-bottom:1px solid var(--line)}
   .footer-top .logo span{color:var(--text)}
+  .logo-xl{gap:clamp(10px,1.2vw,18px)}
+  .logo-xl img{height:clamp(34px,4.6vw,62px)}
+  .logo-xl span{font-size:clamp(36px,4.9vw,66px);font-weight:300;letter-spacing:-.01em;transform:translateY(2px)}
   .totop{width:48px;height:48px;border:1px solid var(--line);display:grid;place-items:center;transition:background .25s,color .25s}
   .totop:hover{background:var(--black);color:var(--white)}
   .totop svg{width:18px;height:18px}
   .footer-main{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;padding:48px 0}
-  .footer-main .tag{font-size:clamp(26px,2.6vw,38px);font-weight:200;letter-spacing:-.03em;line-height:1.15;max-width:18ch}
-  .footer-main .tag b{font-weight:400;color:var(--green-ink)}
-  .footer-main .notice{margin-top:24px;font-size:13.5px;color:var(--muted)}
   .footer ul{list-style:none;display:grid;gap:2px}
   .footer ul a{display:inline-block;padding:7px 0;font-size:14.5px;transition:color .2s}
   .footer ul a:hover{color:var(--green-ink)}
@@ -332,6 +357,11 @@
     .news{grid-template-columns:1fr}
     .cta .wrap{grid-template-columns:1fr;grid-template-rows:auto auto auto;gap:28px}
     .cta .note,.cta h2,.cta .act{grid-column:1;grid-row:auto}
+    .fw .wrap{grid-template-columns:1fr;grid-template-rows:auto;row-gap:24px}
+    .fw-note,.fw h2,.fw .act,.fw-links{grid-column:1;grid-row:auto}
+    .fw h2{padding-top:24px}
+    .fw-links{grid-template-columns:1fr 1fr}
+    .fw-links a:nth-child(3){border-left:0;padding-left:0}
     .cta{min-height:auto}
   }
   @media (max-width:640px){
@@ -344,6 +374,8 @@
     .addr{grid-template-columns:1fr}
     .footer-main{grid-template-columns:1fr}
     .slides{min-height:0}
+    .fw-links{grid-template-columns:1fr}
+    .fw-links a{border-left:0;padding-left:0;border-bottom:1px solid rgba(255,255,255,.22)}
     .item{grid-template-columns:112px 1fr;gap:16px}
     .item .byline>span:first-child,.item .byline .dot{display:none}
     .byline{white-space:nowrap}
@@ -488,6 +520,23 @@
   </div>
 </section>
 
+<!-- ================= FOREWORK (family company) ================= -->
+<section class="fw" aria-label="Forework, a Poricanin company">
+  <div class="fw-bg" role="img" aria-label="Open-plan office with teams at work"></div>
+  <div class="wrap">
+    <div class="fw-brand reveal">
+      <span class="label">A Poricanin company</span>
+      <img src="{{forework-logo-white.png}}" alt="Forework" width="195" height="30">
+    </div>
+    <p class="fw-note reveal">Founded by Emina Poricanin, Esq., Forework pairs payroll, tax and HR technology with daily access to labor-law professionals, so businesses stay compliant and avoid costly audits.</p>
+    <h2 class="reveal">Workforce management, <b>built by employment attorneys.</b></h2>
+    <div class="act reveal">
+      <a href="https://forework.com" target="_blank" rel="noopener" class="btn btn-green">Visit forework.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    </div>
+    <nav class="fw-links reveal" aria-label="Forework services"><a href="https://forework.com" target="_blank" rel="noopener"><span class="n">01</span><b>Payroll &amp; tax <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M8 7h9v9"/></svg></b><span class="s">Compliant payroll and tax services</span></a><a href="https://forework.com" target="_blank" rel="noopener"><span class="n">02</span><b>Time &amp; attendance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M8 7h9v9"/></svg></b><span class="s">Pay rules that work for everyone</span></a><a href="https://forework.com" target="_blank" rel="noopener"><span class="n">03</span><b>Human resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M8 7h9v9"/></svg></b><span class="s">Attorney-backed HR counsel</span></a><a href="https://forework.com" target="_blank" rel="noopener"><span class="n">04</span><b>Payroll tax &amp; ACA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M8 7h9v9"/></svg></b><span class="s">State, IRS and ACA compliance</span></a></nav>
+  </div>
+</section>
+
 <!-- ================= TESTIMONIALS ================= -->
 <section class="quotes" aria-label="Client testimonials">
   <div class="wrap quotes-grid">
@@ -625,13 +674,13 @@
 <footer class="footer">
   <div class="wrap">
     <div class="footer-top">
-      <a href="#top" class="logo" aria-label="Poricanin Law home"><img src="{{poricanin-wordmark-black.png}}" alt="Poricanin" width="118" height="21"><span>Law</span></a>
+      <a href="#top" class="logo logo-xl" aria-label="Poricanin Law home"><img src="{{poricanin-wordmark-black.png}}" alt="Poricanin" width="330" height="59"><span>Law</span></a>
       <a href="#top" class="totop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V4M6 10l6-6 6 6"/></svg></a>
     </div>
     <div class="footer-main">
       <div>
-        <p class="tag">Practical legal solutions for <b>business.</b></p>
-        <p class="notice">hello@poricaninlaw.com · 518.807.3458</p>
+        <h5>Contact</h5>
+        <ul><li><a href="mailto:hello@poricaninlaw.com">hello@poricaninlaw.com</a></li><li><a href="tel:+15188073458">518.807.3458</a></li><li><a href="https://forework.com" target="_blank" rel="noopener">Forework, a Poricanin company</a></li></ul>
       </div>
       <div><h5>Firm</h5><ul><li><a href="#why">About us</a></li><li><a href="#practice">Services</a></li><li><a href="#founder">Our founder</a></li><li><a href="#">Events &amp; webinars</a></li></ul></div>
       <div><h5>Resources</h5><ul><li><a href="#insights">News &amp; insights</a></li><li><a href="#">Client feedback</a></li><li><a href="#">Client area</a></li><li><a href="#contact">Contact us</a></li></ul></div>
