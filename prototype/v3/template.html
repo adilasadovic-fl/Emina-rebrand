@@ -179,20 +179,56 @@
   .slide cite{display:flex;align-items:center;gap:14px;margin-top:32px;font-style:normal;font-size:14px;font-weight:500}
   .slide cite::before{content:"";width:32px;height:2px;background:var(--green)}
 
-  /* ---------- insights ---------- */
+  /* ---------- news & insights ---------- */
   .insights{background:var(--paper);padding:clamp(80px,9vw,120px) 0}
-  .insights-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
-  .insights-head h2{font-size:clamp(32px,3.4vw,48px);margin-top:16px}
-  .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
-  .post{display:flex;flex-direction:column;background:var(--white);transition:transform .4s var(--ease)}
-  .post:hover{transform:translateY(-4px)}
-  .post .img{aspect-ratio:3/2;overflow:hidden;background:#ddd}
-  .post img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .6s var(--ease),transform 1s var(--ease)}
-  .post:hover img{filter:grayscale(0);transform:scale(1.04)}
-  .post .txt{padding:26px 26px 28px;display:flex;flex-direction:column;gap:14px;flex:1}
-  .post time{font-size:12.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--green-ink)}
-  .post h3{font-size:19px;font-weight:400;letter-spacing:-.01em;line-height:1.35}
-  .post .link-arrow{margin-top:auto}
+  .insights-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:clamp(40px,4vw,56px)}
+  .insights-head h2{font-size:clamp(36px,4.2vw,60px);margin-top:16px}
+  .insights-head p{margin-top:18px;color:var(--muted);max-width:52ch}
+  .btn-solid{background:var(--black);color:var(--white);border-color:var(--black)}
+  .btn-solid:hover{background:var(--green-ink);border-color:var(--green-ink)}
+  .news{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(28px,3.5vw,56px);align-items:start}
+  .tags{display:flex;gap:8px;flex-wrap:wrap}
+  .tag{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 11px;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;line-height:1}
+  .tag svg{width:12px;height:12px}
+  .tag-premium{background:var(--black);color:var(--green)}
+  .tag-free{border:1px solid var(--green-ink);color:var(--green-ink)}
+  .tag-event{background:var(--green);color:#06140D}
+  .tag-type{background:var(--white);color:var(--muted);font-weight:500;letter-spacing:.04em;text-transform:none;font-size:12.5px;border:1px solid var(--line)}
+  .byline{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--muted)}
+  .byline .av{width:34px;height:34px;border-radius:50%;background:var(--black);color:var(--green);display:grid;place-items:center;font-size:12px;font-weight:600;letter-spacing:.04em;flex:none}
+  .byline .dot{width:3px;height:3px;border-radius:50%;background:currentColor;opacity:.6}
+  /* featured */
+  .feature{display:flex;flex-direction:column;gap:20px}
+  .feature .img{display:block;aspect-ratio:4/3;overflow:hidden;background:#ddd}
+  .feature .img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+  .feature:hover .img img{transform:scale(1.04)}
+  .feature h3{font-size:clamp(26px,2.4vw,36px);font-weight:300;letter-spacing:-.025em;line-height:1.16}
+  .feature h3 a{transition:color .2s}
+  .feature h3 a:hover{color:var(--green-ink)}
+  .feature .excerpt{color:var(--muted);font-size:15.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .feature .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:4px}
+  .feature .btn{min-height:46px;padding:0 22px;font-size:14px}
+  /* list */
+  .news-list{display:flex;flex-direction:column}
+  .item{display:grid;grid-template-columns:clamp(150px,13vw,200px) 1fr;gap:clamp(18px,2vw,26px);padding:22px 0;border-top:1px solid var(--line)}
+  .item:first-child{border-top:0;padding-top:0}
+  .item .thumb{display:block;aspect-ratio:7/6;overflow:hidden;background:#ddd;position:relative}
+  .item .thumb img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15);transition:transform 1s var(--ease),filter .5s}
+  .item:hover .thumb img{transform:scale(1.05);filter:none}
+  .item .body{display:flex;flex-direction:column;gap:10px;min-width:0}
+  .item h3{font-size:clamp(17px,1.4vw,20px);font-weight:400;letter-spacing:-.015em;line-height:1.3}
+  .item h3 a:hover{color:var(--green-ink)}
+  .item .excerpt{font-size:14px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .item .meta{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:auto}
+  .read{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--line);padding:6px 0;transition:color .2s,text-decoration-color .2s}
+  .read:hover{color:var(--green-ink);text-decoration-color:var(--green-ink)}
+  .read svg{width:14px;height:14px}
+  /* event thumb */
+  .thumb.event{background:radial-gradient(ellipse 90% 80% at 100% 100%,rgba(31,122,82,.85),transparent 65%),var(--black);color:var(--white);display:flex;flex-direction:column;justify-content:space-between;padding:16px}
+  .thumb.event::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.16) 1px,transparent 1.2px);background-size:10px 10px;mask-image:linear-gradient(135deg,transparent 30%,#000);-webkit-mask-image:linear-gradient(135deg,transparent 30%,#000)}
+  .thumb.event span{position:relative;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+  .thumb.event b{position:relative;font-size:clamp(26px,2.4vw,34px);font-weight:200;letter-spacing:-.03em;line-height:1}
+  .thumb.event small{position:relative;font-size:12px;color:rgba(255,255,255,.75)}
 
   /* ---------- cta ---------- */
   .cta{min-height:620px;color:var(--white);overflow:hidden;display:flex}
@@ -293,7 +329,7 @@
     .founder-grid{grid-template-columns:1fr}
     .founder-img{min-height:520px;order:-1}
     .founder-text{padding:64px var(--gutter)}
-    .posts{grid-template-columns:1fr}
+    .news{grid-template-columns:1fr}
     .cta .wrap{grid-template-columns:1fr;grid-template-rows:auto auto auto;gap:28px}
     .cta .note,.cta h2,.cta .act{grid-column:1;grid-row:auto}
     .cta{min-height:auto}
@@ -308,6 +344,12 @@
     .addr{grid-template-columns:1fr}
     .footer-main{grid-template-columns:1fr}
     .slides{min-height:0}
+    .item{grid-template-columns:112px 1fr;gap:16px}
+    .item .byline>span:first-child,.item .byline .dot{display:none}
+    .byline{white-space:nowrap}
+    .thumb.event{padding:12px}
+    .thumb.event b{font-size:22px}
+    .thumb.event small{display:none}
     .btn{width:100%;justify-content:center}
     .header .btn,.form-foot .btn{width:auto}
   }
@@ -322,7 +364,7 @@
       <a href="#why">About</a>
       <a href="#practice">Practice Areas</a>
       <a href="#founder">Our Founder</a>
-      <a href="#insights">Insights</a>
+      <a href="#insights">News &amp; Insights</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="head-right">
@@ -333,7 +375,7 @@
   </div>
 </header>
 <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
-  <a href="#why">About</a><a href="#practice">Practice Areas</a><a href="#founder">Our Founder</a><a href="#insights">Insights</a><a href="#contact">Contact</a><a href="#">Client Area</a>
+  <a href="#why">About</a><a href="#practice">Practice Areas</a><a href="#founder">Our Founder</a><a href="#insights">News &amp; Insights</a><a href="#contact">Contact</a><a href="#">Client Area</a>
   <a href="#contact" class="btn btn-green">Schedule consultation</a>
 </nav>
 
@@ -430,11 +472,11 @@
     <div class="founder-text reveal">
       <span class="label">Our founder</span>
       <h2 class="thin">Emina Poricanin</h2>
-      <h2 class="caps">Attorney &amp; tech executive</h2>
+      <h2 class="caps">Lawyer &amp; tech founder</h2>
       <!-- Bio below is a draft for review: replace with Emina's approved biography. -->
       <div class="bio">
-        <p>Emina founded Poricanin Law to give business owners the counsel she would want as an executive: practical, direct and grounded in how companies actually operate.</p>
-        <p>Clients describe her as practical, to-the-point and always reachable. As a technology executive herself, she brings an operator's perspective to every matter, balancing legal risk against growth, cost and the realities of running a business.</p>
+        <p>Emina founded Poricanin Law to give business owners the counsel she would want as a founder: practical, direct and grounded in how companies actually operate.</p>
+        <p>Clients describe her as practical, to-the-point and always reachable. As a tech founder herself, she brings an operator's perspective to every matter, balancing legal risk against growth, cost and the realities of running a business.</p>
       </div>
       <div class="spacer"></div>
       <a href="#" class="btn btn-dark">Meet our people <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
@@ -469,17 +511,58 @@
   </div>
 </section>
 
-<!-- ================= INSIGHTS ================= -->
+<!-- ================= NEWS & INSIGHTS ================= -->
 <section class="insights" id="insights">
   <div class="wrap">
     <div class="insights-head reveal">
-      <div><span class="label">What's new</span><h2 class="thin">Latest premium articles</h2></div>
-      <a href="#" class="link-arrow">All premium articles <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+      <div>
+        <span class="label">News &amp; insights</span>
+        <h2 class="thin">Our events, news<br>and articles</h2>
+        <p>Practical guidance, regulatory updates and analysis for New York employers and providers.</p>
+      </div>
+      <a href="#" class="btn btn-solid">View all news &amp; insights <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
     </div>
-    <div class="posts">
-      <a href="#" class="post reveal"><div class="img"><img src="{{article-medicaid-hour.webp}}" alt="" loading="lazy"></div><div class="txt"><time datetime="2026-09-01">September 1, 2026</time><h3>Hire First, Document Later? Every Medicaid Hour May Be at Risk</h3><span class="link-arrow">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></div></a>
-      <a href="#" class="post reveal"><div class="img"><img src="{{article-revalidating.webp}}" alt="" loading="lazy"></div><div class="txt"><time datetime="2026-08-24">August 24, 2026</time><h3>New York Medicaid Is Revalidating Every Provider: What Providers Need to Do Now</h3><span class="link-arrow">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></div></a>
-      <a href="#" class="post reveal"><div class="img"><img src="{{article-cyclospora.webp}}" alt="" loading="lazy"></div><div class="txt"><time datetime="2026-07-20">July 20, 2026</time><h3>Increase in Cyclospora Cases Across New York: What Healthcare Providers Should Know</h3><span class="link-arrow">Read article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></div></a>
+    <div class="news">
+      <article class="feature reveal">
+        <a href="#" class="img" tabindex="-1" aria-hidden="true"><img src="{{article-evv-payroll.webp}}" alt="" loading="lazy"></a>
+        <div class="tags"><span class="tag tag-free">Free</span><span class="tag tag-type">Article</span></div>
+        <h3><a href="#">The Criminal and Civil Exposure When Your EVV and Billing Company Also Becomes Your Payroll Vendor</a></h3>
+        <p class="excerpt">At first glance, combining scheduling, EVV, billing and payroll may seem efficient. But for New York home care agencies, especially those downstate and covered by the Wage Parity Law, the risks add up quickly.</p>
+        <div class="foot">
+          <div class="byline"><span class="av" aria-hidden="true">EP</span><span>Emina Poricanin</span><span class="dot"></span><span>Sep 13, 2026</span></div>
+          <a href="#" class="btn btn-solid">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        </div>
+      </article>
+      <div class="news-list">
+        <article class="item reveal">
+          <a href="#" class="thumb" tabindex="-1" aria-hidden="true"><img src="{{article-medicaid-hour.webp}}" alt="" loading="lazy"></a>
+          <div class="body">
+            <div class="tags"><span class="tag tag-premium"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10V8a5 5 0 00-10 0v2H5v12h14V10zm-8 0V8a3 3 0 016 0v2z"/></svg>Premium</span><span class="tag tag-type">Article</span></div>
+            <h3><a href="#">Hire First, Document Later? Every Medicaid Hour May Be at Risk</a></h3>
+            <p class="excerpt">A home care agency cannot send a caregiver into a Medicaid-funded home before the paperwork is complete.</p>
+            <div class="meta"><div class="byline"><span>Emina Poricanin</span><span class="dot"></span><span>Sep 1, 2026</span></div><a href="#" class="read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+          </div>
+        </article>
+        <article class="item reveal">
+          <a href="#" class="thumb" tabindex="-1" aria-hidden="true"><img src="{{article-revalidating.webp}}" alt="" loading="lazy"></a>
+          <div class="body">
+            <div class="tags"><span class="tag tag-premium"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10V8a5 5 0 00-10 0v2H5v12h14V10zm-8 0V8a3 3 0 016 0v2z"/></svg>Premium</span><span class="tag tag-type">Article</span></div>
+            <h3><a href="#">New York Medicaid Is Revalidating Every Provider: What Providers Need to Do Now</a></h3>
+            <p class="excerpt">New York has begun a statewide revalidation of every Medicaid-enrolled provider.</p>
+            <div class="meta"><div class="byline"><span>Emina Poricanin</span><span class="dot"></span><span>Aug 24, 2026</span></div><a href="#" class="read">Read more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+          </div>
+        </article>
+        <!-- SAMPLE EVENT: the Events & Webinars page on poricaninlaw.com is currently empty. Replace with a real event. -->
+        <article class="item reveal">
+          <a href="#" class="thumb event" tabindex="-1" aria-hidden="true"><span>Webinar</span><b>Date<br>TBA</b><small>Online · 60 min</small></a>
+          <div class="body">
+            <div class="tags"><span class="tag tag-event"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Event</span><span class="tag tag-type">Webinar</span></div>
+            <h3><a href="#">Medicaid Provider Revalidation: A Practical Checklist for Home Care Agencies</a></h3>
+            <p class="excerpt">A live walkthrough of what agencies need to prepare, with time for your questions.</p>
+            <div class="meta"><div class="byline"><span>Emina Poricanin</span><span class="dot"></span><span>Date TBA</span></div><a href="#" class="read">Register <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+          </div>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -551,7 +634,7 @@
         <p class="notice">hello@poricaninlaw.com · 518.807.3458</p>
       </div>
       <div><h5>Firm</h5><ul><li><a href="#why">About us</a></li><li><a href="#practice">Services</a></li><li><a href="#founder">Our founder</a></li><li><a href="#">Events &amp; webinars</a></li></ul></div>
-      <div><h5>Resources</h5><ul><li><a href="#insights">Premium articles</a></li><li><a href="#">Client feedback</a></li><li><a href="#">Client area</a></li><li><a href="#contact">Contact us</a></li></ul></div>
+      <div><h5>Resources</h5><ul><li><a href="#insights">News &amp; insights</a></li><li><a href="#">Client feedback</a></li><li><a href="#">Client area</a></li><li><a href="#contact">Contact us</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Poricanin Law. All rights reserved. Attorney advertising.</span>
