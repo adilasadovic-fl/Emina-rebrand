@@ -7,7 +7,7 @@
 <meta name="description" content="Poricanin Law: practical, modern legal counsel for businesses and their executives.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root{
     /* Brand palette — black / white / green, with greys and a beige-gold accent */
@@ -29,7 +29,7 @@
 
     --font-display:"Inter Tight", system-ui, sans-serif;
     --font-body:"Inter", system-ui, sans-serif;
-    --font-mono:"JetBrains Mono", ui-monospace, monospace;
+    --font-mono:"Poppins", system-ui, sans-serif; /* labels: Poppins Light */
 
     --wrap:1240px;
     --gutter:clamp(16px, 4vw, 48px);
@@ -44,7 +44,7 @@
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
 
   /* ---------- type ---------- */
-  .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);display:inline-flex;align-items:center;gap:10px}
+  .eyebrow{font-family:var(--font-mono);font-weight:300;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);display:inline-flex;align-items:center;gap:10px}
   .eyebrow::before{content:"";width:24px;height:1px;background:currentColor}
   .dark .eyebrow{color:var(--green-bright)}
   h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;letter-spacing:-.025em;line-height:1.05}
@@ -76,11 +76,9 @@
   .header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
   .header.scrolled{background:rgba(10,11,10,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line-dark)}
   .header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-  .logo{display:flex;align-items:center;gap:12px;color:var(--white)}
-  .logo-mark{width:34px;height:34px;border:1.5px solid var(--white);display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:-.02em;position:relative}
-  .logo-mark::after{content:"";position:absolute;right:-1.5px;bottom:-1.5px;width:9px;height:9px;background:var(--green-bright)}
-  .logo-text{font-family:var(--font-display);font-weight:600;font-size:18px;letter-spacing:-.02em}
-  .logo-text span{color:var(--grey-500);font-weight:500}
+  .logo{display:flex;align-items:center;gap:9px;color:var(--white)}
+  .logo-word{height:22px;width:auto}
+  .logo-law{font-family:"Poppins",sans-serif;font-weight:300;font-size:23px;line-height:1;color:var(--white);letter-spacing:.01em;transform:translateY(1px)}
   .nav{display:flex;gap:32px;font-size:14px;color:var(--grey-300)}
   .nav a{transition:color .2s}
   .nav a:hover{color:var(--white)}
@@ -100,12 +98,12 @@
   .hero h1 em{font-style:normal;color:var(--green-bright)}
   .hero .lead{margin-bottom:40px}
   .hero-actions{display:flex;flex-wrap:wrap;gap:14px}
-  .hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line-dark);font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;color:var(--grey-500);text-transform:uppercase}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line-dark);font-family:var(--font-mono);font-weight:300;font-size:12px;letter-spacing:.06em;color:var(--grey-500);text-transform:uppercase}
   .hero-meta b{display:block;color:var(--white);font-family:var(--font-display);font-size:15px;letter-spacing:-.01em;text-transform:none;font-weight:500;margin-top:6px}
 
   /* hero console panel */
   .console{background:linear-gradient(180deg,#141715,#0E100F);border:1px solid var(--line-dark);border-radius:10px;box-shadow:0 40px 120px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.02) inset;overflow:hidden;font-size:14px}
-  .console-top{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line-dark);font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;color:var(--grey-500);text-transform:uppercase}
+  .console-top{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line-dark);font-family:var(--font-mono);font-weight:300;font-size:11px;letter-spacing:.08em;color:var(--grey-500);text-transform:uppercase}
   .dots{display:flex;gap:6px}.dots i{width:9px;height:9px;border-radius:50%;background:var(--line-dark)}
   .live{display:inline-flex;align-items:center;gap:8px;color:var(--green-bright)}
   .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green-bright);box-shadow:0 0 0 0 rgba(63,209,138,.6);animation:pulse 2s infinite}
@@ -117,7 +115,7 @@
   @keyframes rowIn{to{opacity:1;transform:none}}
   .row-title{color:var(--white);font-weight:500}
   .row-sub{color:var(--grey-500);font-size:12.5px;margin-top:2px}
-  .tag{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border-radius:3px;white-space:nowrap}
+  .tag{font-family:var(--font-mono);font-weight:300;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border-radius:3px;white-space:nowrap}
   .tag.ok{background:rgba(63,209,138,.12);color:var(--green-bright)}
   .tag.prog{background:rgba(194,165,110,.14);color:var(--gold)}
   .bar{height:3px;background:var(--line-dark);border-radius:2px;margin-top:10px;overflow:hidden;grid-column:1/-1}
@@ -125,12 +123,12 @@
   @keyframes grow{to{width:var(--w)}}
   .console-foot{display:flex;justify-content:space-between;padding:14px 18px;border-top:1px solid var(--line-dark);background:rgba(255,255,255,.015);font-size:12.5px;color:var(--grey-500)}
   .console-foot b{color:var(--white);font-weight:500}
-  .console-note{font-family:var(--font-mono);font-size:10.5px;color:var(--grey-700);letter-spacing:.06em;text-transform:uppercase;margin-top:14px;text-align:right}
+  .console-note{font-family:var(--font-mono);font-weight:300;font-size:10.5px;color:var(--grey-700);letter-spacing:.06em;text-transform:uppercase;margin-top:14px;text-align:right}
 
   /* ---------- industries strip ---------- */
   .strip{border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);background:var(--ink);overflow:hidden}
   .strip .wrap{display:flex;align-items:center;gap:40px;height:92px}
-  .strip-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);white-space:nowrap}
+  .strip-label{font-family:var(--font-mono);font-weight:300;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);white-space:nowrap}
   .marquee{flex:1;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
   .marquee-track{display:flex;gap:56px;width:max-content;animation:marquee 38s linear infinite}
   .marquee-track span{font-family:var(--font-display);font-size:20px;color:var(--grey-300);white-space:nowrap;display:flex;align-items:center;gap:56px;letter-spacing:-.01em}
@@ -143,7 +141,7 @@
   .principles{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--grey-100);border-left:1px solid var(--grey-100)}
   .principle{padding:32px 28px;border-right:1px solid var(--grey-100);border-bottom:1px solid var(--grey-100);background:var(--white);transition:background .25s}
   .principle:hover{background:var(--paper)}
-  .principle .n{font-family:var(--font-mono);font-size:12px;color:var(--gold);letter-spacing:.08em}
+  .principle .n{font-family:var(--font-mono);font-weight:300;font-size:12px;color:var(--gold);letter-spacing:.08em}
   .principle h3{margin:36px 0 10px}
   .principle p{font-size:14.5px;color:var(--grey-700)}
   .about-actions{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
@@ -158,7 +156,7 @@
   .practice:hover{background:var(--black);color:var(--white)}
   .practice:hover::before{width:100%;background:var(--green-bright)}
   .practice .top{display:flex;justify-content:space-between;align-items:start}
-  .practice .n{font-family:var(--font-mono);font-size:12px;color:var(--grey-500);letter-spacing:.08em}
+  .practice .n{font-family:var(--font-mono);font-weight:300;font-size:12px;color:var(--grey-500);letter-spacing:.08em}
   .practice .icon{width:44px;height:44px;border:1px solid var(--grey-300);display:grid;place-items:center;color:var(--green);transition:border-color .3s,color .3s}
   .practice:hover .icon{border-color:var(--line-dark);color:var(--green-bright)}
   .practice .icon svg{width:20px;height:20px}
@@ -175,14 +173,14 @@
   .cta-band h2 span{color:var(--gold)}
   .cta-side{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
   .cta-side .phone{font-family:var(--font-display);font-size:28px;letter-spacing:-.02em}
-  .cta-side .phone small{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin-bottom:6px}
+  .cta-side .phone small{display:block;font-family:var(--font-mono);font-weight:300;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin-bottom:6px}
   .cta-lines{position:absolute;right:-80px;top:50%;width:520px;height:520px;transform:translateY(-50%);opacity:.5;pointer-events:none}
 
   /* ---------- outcomes ---------- */
   .outcomes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .outcome{border:1px solid var(--grey-100);padding:32px;display:flex;flex-direction:column;gap:18px;background:var(--white);transition:border-color .25s,transform .25s}
   .outcome:hover{border-color:var(--green);transform:translateY(-4px)}
-  .outcome .cat{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey-500);display:flex;justify-content:space-between}
+  .outcome .cat{font-family:var(--font-mono);font-weight:300;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey-500);display:flex;justify-content:space-between}
   .outcome .cat b{color:var(--green);font-weight:500}
   .outcome h3{font-size:24px}
   .outcome p{font-size:14.5px;color:var(--grey-700)}
@@ -191,17 +189,16 @@
 
   /* ---------- why / founder ---------- */
   .why .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,110px);align-items:center}
-  .founder-card{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,#1C201E,#0C0E0D);border:1px solid var(--line-dark);overflow:hidden}
-  .founder-card .ph{position:absolute;inset:0;display:grid;place-items:center;color:var(--grey-700);font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:24px}
-  .founder-card .ph svg{width:120px;height:120px;margin:0 auto 18px;opacity:.5}
+  .founder-card{position:relative;aspect-ratio:4/5;background:radial-gradient(ellipse 70% 55% at 50% 45%,rgba(63,209,138,.22),transparent 70%),linear-gradient(170deg,#1A2A22 0%,#0E1311 60%,#0A0B0A 100%);border:1px solid var(--line-dark);overflow:hidden}
+  .founder-photo{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:94%;width:auto;max-width:none;filter:drop-shadow(0 30px 60px rgba(0,0,0,.5))}
   .founder-card .badge{position:absolute;left:24px;bottom:24px;right:24px;background:rgba(10,11,10,.82);backdrop-filter:blur(8px);border:1px solid var(--line-dark);padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
   .founder-card .badge b{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em}
   .founder-card .badge small{display:block;color:var(--grey-500);font-size:12.5px}
-  .founder-card .corner{position:absolute;top:0;right:0;width:72px;height:72px;border-left:1px solid var(--gold);border-bottom:1px solid var(--gold);opacity:.6}
+  .founder-card .corner{z-index:1;position:absolute;top:0;right:0;width:72px;height:72px;border-left:1px solid var(--gold);border-bottom:1px solid var(--gold);opacity:.6}
   .why h2{margin:20px 0 24px}
   .why-list{margin-top:44px;display:grid;gap:0;border-top:1px solid var(--line-dark)}
   .why-item{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--line-dark)}
-  .why-item .n{font-family:var(--font-mono);font-size:12px;color:var(--green-bright);padding-top:4px}
+  .why-item .n{font-family:var(--font-mono);font-weight:300;font-size:12px;color:var(--green-bright);padding-top:4px}
   .why-item h4{font-size:18px;font-weight:600;letter-spacing:-.01em;margin-bottom:4px}
   .why-item p{color:var(--grey-500);font-size:14.5px}
 
@@ -224,7 +221,7 @@
   .insights{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
   .post{border:1px solid var(--line-dark);padding:32px;display:flex;flex-direction:column;gap:16px;transition:border-color .25s,background .25s;min-height:220px}
   .post:hover{border-color:var(--green-bright);background:var(--ink)}
-  .post .meta{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-500)}
+  .post .meta{display:flex;justify-content:space-between;font-family:var(--font-mono);font-weight:300;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-500)}
   .post .meta b{color:var(--gold);font-weight:500}
   .post h3{font-size:22px;color:var(--white)}
   .post.feature{grid-row:span 2;justify-content:flex-end;background:linear-gradient(160deg,#16231C 0%,#0A0B0A 65%);min-height:460px}
@@ -243,10 +240,10 @@
   .ci{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
   .ci .ico{width:44px;height:44px;border:1px solid var(--grey-300);display:grid;place-items:center;color:var(--green)}
   .ci .ico svg{width:18px;height:18px}
-  .ci small{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey-500)}
+  .ci small{display:block;font-family:var(--font-mono);font-weight:300;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey-500)}
   .ci a,.ci span{font-weight:500}
   .offices{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:28px;border-top:1px solid var(--grey-100)}
-  .office small{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .office small{font-family:var(--font-mono);font-weight:300;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
   .office p{font-size:13.5px;color:var(--grey-700);margin-top:6px;line-height:1.5}
   form.card{background:var(--white);border:1px solid var(--grey-100);padding:clamp(24px,4vw,48px);box-shadow:0 30px 80px -40px rgba(10,11,10,.25)}
   .fields{display:grid;grid-template-columns:1fr 1fr;gap:22px 20px}
@@ -264,7 +261,7 @@
   .footer{padding:80px 0 32px}
   .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:56px;border-bottom:1px solid var(--line-dark)}
   .footer-top p{color:var(--grey-500);font-size:14px;max-width:32ch;margin-top:20px}
-  .footer h5{font-family:var(--font-mono);font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin-bottom:18px}
+  .footer h5{font-family:var(--font-mono);font-weight:300;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);margin-bottom:18px}
   .footer ul{list-style:none;display:grid;gap:10px;font-size:14px;color:var(--grey-300)}
   .footer ul a:hover{color:var(--green-bright)}
   .footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:28px;font-size:12.5px;color:var(--grey-500);flex-wrap:wrap}
@@ -328,8 +325,7 @@
 <header class="header" id="top">
   <div class="wrap">
     <a href="#top" class="logo" aria-label="Poricanin Law home">
-      <span class="logo-mark">PL</span>
-      <span class="logo-text">Poricanin <span>Law</span></span>
+      <img class="logo-word" src="assets/poricanin-wordmark-white.png" alt="Poricanin" width="123" height="22"><span class="logo-law">Law</span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="#about">About</a>
@@ -550,12 +546,7 @@
   <div class="wrap">
     <div class="founder-card reveal">
       <span class="corner" aria-hidden="true"></span>
-      <div class="ph">
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
-          Founder portrait<br>(professional photo)
-        </div>
-      </div>
+      <img class="founder-photo" src="assets/emina-cutout.webp" alt="Emina Poricanin, founder of Poricanin Law" width="887" height="1351">
       <div class="badge">
         <div><b>Emina Poricanin</b><small>Founder · Attorney · Tech executive</small></div>
         <a href="#" aria-label="LinkedIn" class="socials"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
@@ -684,7 +675,7 @@
   <div class="wrap">
     <div class="footer-top">
       <div>
-        <a href="#top" class="logo"><span class="logo-mark">PL</span><span class="logo-text">Poricanin <span>Law</span></span></a>
+        <a href="#top" class="logo"><img class="logo-word" src="assets/poricanin-wordmark-white.png" alt="Poricanin" width="123" height="22"><span class="logo-law">Law</span></a>
         <p>Practical, modern legal counsel for businesses and their executives.</p>
       </div>
       <div><h5>Firm</h5><ul><li><a href="#about">About us</a></li><li><a href="#clients">Client feedback</a></li><li><a href="#">Events &amp; webinars</a></li><li><a href="#insights">Premium articles</a></li></ul></div>
